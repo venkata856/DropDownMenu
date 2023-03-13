@@ -219,7 +219,7 @@ function imageCircles(){
 }
 
 
-
+//method highlights
 function highlightImage(){
 
     document.querySelectorAll(".image-circle").forEach((element)=>{
