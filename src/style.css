@@ -98,6 +98,8 @@ nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(5){
     align-items: center;
     position: absolute;
     left:50vh;
+    flex-direction: column;
+    gap:12px;
 }
 
 .slider-container{
@@ -142,6 +144,35 @@ nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(5){
 
 .btn-primary:hover{
     opacity: 1;
+}
+
+.circle-container{
+
+    position: relative;
+    height: 20px;
+    width:600px;
+
+    border-radius: 10px;
+    /* background-color:rgba(115,107,107,.005); */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:6px;
+}
+
+.image-circle{
+    height:8px;
+    width:8px;
+    border-radius: 50%;
+    background-color:white;
+    border:0.3px solid black;
+}
+
+.active{
+
+    height:12px;
+    width:12px;
+    border:1.5px solid black;
 }
 
 

@@ -20,16 +20,12 @@ function loadPage(){
 
     
     document.body.appendChild(navDiv);
-    document.body.appendChild(loadImages())
+    document.body.appendChild(loadImages());
+
+    const sliderContainer=document.querySelector(".slider-main-container")
+    sliderContainer.appendChild(imageCircles());
 
     
-
-
-
-
-
-    console.log("loading project");
-
     imageContainerElm = document.querySelector('.image-container');
 }
 
@@ -117,6 +113,8 @@ function loadImages(){
     
     sliderMainContainer.appendChild(sliderContainer);
 
+    
+
 
     return sliderMainContainer;
 
@@ -146,6 +144,7 @@ function addButtons(buttonName){
             currentImg++;
             clearTimeout(clearTime);
             updateImages();
+            highlightImage();
 
 
         }else{
@@ -153,6 +152,7 @@ function addButtons(buttonName){
             currentImg--;
             clearTimeout(clearTime);
             updateImages();
+            highlightImage();
         }
 
 
@@ -181,6 +181,55 @@ function updateImages(){
     clearTime=setTimeout(()=>{
         currentImg++;
         updateImages();
+        highlightImage();
     },2500);
 
+}
+
+
+function imageCircles(){
+
+    const imageCirclesContainer = document.createElement('div');
+    imageCirclesContainer.className = 'circle-container';
+    const imagesContainerElm = document.querySelectorAll('img');
+
+    for(let i =0;i <imagesContainerElm.length; i++){
+
+        const imageCircle = document.createElement('div');
+        imageCircle.classList="image-circle";
+        imageCircle.dataset.value = i;
+        imageCirclesContainer.appendChild(imageCircle);
+
+        imageCircle.addEventListener('click', (e)=>{
+
+            console.log(e.target.dataset.value)
+            currentImg=+e.target.dataset.value + 1;
+            clearTimeout(clearTime);
+            updateImages();
+            highlightImage();
+
+            e.target.classList.add("active");
+        })
+
+    }
+
+    
+
+    return imageCirclesContainer;
+}
+
+
+
+function highlightImage(){
+
+    document.querySelectorAll(".image-circle").forEach((element)=>{
+
+        if(! (+element.dataset.value + 1 === currentImg)){
+
+            element.classList.remove("active");
+
+        }else{
+            element.classList.add("active");
+        }
+    })
 }
