@@ -1,0 +1,151 @@
+*,*::after,*::before{
+
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: rgb(171, 171, 234);
+}
+
+nav{
+
+    padding:50px;
+    text-align: center;
+}
+
+nav > ul{
+
+    display :inline-block;
+    list-style: none;
+    background: rgb(142, 139, 139);
+}
+
+nav > ul li{
+
+    float: left;
+    list-style: none;
+    width: 150px;
+    height: 65px;
+
+    text-align: center;
+    position: relative;
+}
+
+li ul.dropdown-menu{
+    display: none;
+    background-color: rgb(142, 139, 139);
+    text-align: center;
+}
+
+li ul.dropdown-menu li{
+    background-color: rgb(142, 139, 139);
+    text-align: center;
+
+}
+
+.dropdown-menu li:hover{
+    background-color: rgb(205, 199, 199);
+    border-radius:5px;
+}
+
+
+nav ul li:hover ul.dropdown-menu{
+    display: block;
+}
+nav ul li:hover ul.dropdown-menu.menu1{
+    prospective:1000px
+}
+
+nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(1){
+    animation: menus 300ms ease-in-out -150ms forwards;
+}
+nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(2){
+    animation: menus 1s ease-in-out 0ms forwards;
+}
+nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(3){
+    animation: menus 1s ease-in-out 150ms forwards;
+}
+nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(4){
+    animation: menus 1s ease-in-out 300ms forwards;
+}
+nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(5){
+    animation: menus 1s ease-in-out 450ms forwards;
+}
+
+@keyframes menus {
+
+    0% {
+        opacity:0;
+        transform: rotateY(-90deg) translateX(30px);
+    }
+
+    50% {
+        transform: rotateY(-45deg) translateX(15px);
+    }
+
+    100%{
+
+        opacity: 1;
+        transform: rotateY(0deg) translateX(0px);
+    }
+    
+}
+
+.slider-main-container{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left:50vh;
+}
+
+.slider-container{
+
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    width:600px;
+    border-radius: 10px;
+    box-shadow: 9px 10px 13px 0px #85838c;
+}
+
+.image-container{
+
+    display:flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.btn-primary{
+
+    color:white;
+    height:24px;
+    width:24px;
+    position: absolute;
+    top:50%;
+    opacity: 0.5;
+    transform:translateY(-50%);
+    z-index: 1;
+}
+
+.forward{
+    background:url(../src/arrow-right.png);
+    right:10px;
+    
+}
+
+.backward{
+    background:url(../src/arrow-left.png);
+    left:10px;
+    
+}
+
+.btn-primary:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
