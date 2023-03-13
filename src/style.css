@@ -169,10 +169,14 @@ nav ul li:hover ul.dropdown-menu.menu1 li:nth-child(5){
 }
 
 .active{
-
     height:12px;
     width:12px;
     border:1.5px solid black;
+
+}
+
+.nothing{
+    
 }
 
 
